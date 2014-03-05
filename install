@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -x
+
+common=`pwd | xargs basename`
+
+cmd="-s"
+[ $1 = "--force" ] && cmd="-sf"
+
+# ln $cmd ~/$common/.bashrc ~
+# ln $cmd ~/$common/.profile ~
+# ln $cmd ~/$common/.bash_aliases ~
+ln $cmd ~/$common/.vim ~
+ln $cmd ~/$common/.vimrc ~
+# ln $cmd ~/$common/.om.conf ~
+# ln $cmd ~/$common/.sqliterc ~
+ln $cmd ~/$common/.zshrc ~
+ln $cmd ~/$common/.zsh_aliases ~
+# ln $cmd ~/$common/scripts ~
+# ln $cmd ~/$common/showtime.sh ~
+ln $cmd ~/$common/.screenrc ~
+ln $cmd ~/$common/.gitconfig ~
+ln $cmd ~/$common/.gitignore ~

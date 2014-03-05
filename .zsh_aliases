@@ -1,0 +1,56 @@
+alias pll='cd ~/.common/ && git pull && cd -'
+alias psh='cd ~/.common && git add -A && git commit -a && git push origin master && cd -'
+alias cp='cp -r'
+alias rm='rm -r'
+alias mkdir='mkdir -p'
+alias toutf8="iconv -c -f cp1251 -t utf8"
+alias tawk="awk -F '\t' -v OFS='\t'"
+alias lcread="mapreduce -server local -read"
+alias lcwrite="mapreduce -server local -write"
+alias mrread="mapreduce -read"
+alias mrwrite="mapreduce -write"
+alias vpn=/opt/cisco/anyconnect/bin/vpnui
+alias matlab=~/Dist/matlab2013a/bin/matlab
+alias vims='vim -S .vim.session'
+alias gda='gdb --args'
+alias kchg='ls -t | head -1 | xargs kcachegrind'
+
+alias j1='%1'
+alias j2='%2'
+alias j3='%3'
+alias j4='%4'
+alias j5='%5'
+
+function rossetup {
+    . /opt/ros/hydro/setup.zsh
+    [ -f devel/setup.zsh ] && . devel/setup.zsh
+}
+
+function mrlc() {
+    mr_cp redwood:8013/$1 local/$2
+}
+
+function showline() {
+    num=$1
+    shift 1
+    for fn
+    do
+        echo "$fn:"
+        tawk "NR==$num{print;exit}" $fn
+    done
+}
+
+function rc() {
+    head -1 $1 | tawk '{print NF}'
+}
+
+function middle() {
+    start=$1
+    count=$2
+    f=$3
+    head -$start $f | tail -$count | vim -
+}
+
+function yank() {
+    xclip -selection clipboard
+}

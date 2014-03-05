@@ -1,0 +1,40 @@
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# set TERM
+term screen
+# 
+#defbce "on"
+
+altscreen on
+shell -$SHELL
+
+# Number of lines stored in a buffer
+defscrollback 10000
+
+# F1-F9 - select screens 1-9
+# bindkey -k k1 select 1
+# bindkey -k k2 select 2
+# bindkey -k k3 select 3
+# bindkey -k k4 select 4
+# bindkey -k k5 select 5
+# bindkey -k k6 select 6
+# bindkey -k k7 select 7
+# bindkey -k k8 select 8
+# bindkey -k k9 select 9
+# F10 - create screen
+# bindkey -k k; screen 1
+# F11 - previous screen
+# bindkey -k F1 prev
+# F12 - next screen
+# bindkey -k F2 next
+
+bind c screen 1
+bind 0 select 10
+screen 1
+

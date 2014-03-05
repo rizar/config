@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/etc/apt'
+let g:netrw_dirhist_2='/home/rizar/Jacobs/Speech/Project2/logs'
+let g:netrw_dirhist_3='/opt/ros/hydro/include/std_msgs'
+let g:netrw_dirhist_4='/opt/ros/hydro/include/pcl_msgs'
+let g:netrw_dirhist_5='/home/rizar/Jacobs/Robotics/Project/workspace/src/my_pcl_tutorial/src'
+let g:netrw_dirhist_6='/usr/local/lib/python2.7/dist-packages/theano'
