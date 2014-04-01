@@ -45,9 +45,11 @@ export PATH="$PATH:"\
 '/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
 '/home/rizar/bin'
+export LD_LIBRARY_PATH='/home/rizar/.local/lib'
 export SVN_EDITOR=vim
 export PRJ=/home/rizar/Jacobs/Robotics/Project
 export RGBD=/home/rizar/Jacobs/Robotics/TUM/rgbd_dataset_freiburg1_360
+export OPENBLAS_NUM_THREADS=1
 
 export DISABLE_AUTO_TITLE=true
 export DIRSTACKSIZE=8
