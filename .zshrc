@@ -41,15 +41,19 @@ source $ZSH/oh-my-zsh.sh
 
 # Environment
 export BASH_ENV='~/.bashrc'
-export PATH="$PATH:"\
-'/home/rizar/scripts:'\
+export PATH='/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
-'/home/rizar/bin'
+'/home/rizar/bin:'\
+$PATH
 export LD_LIBRARY_PATH='/home/rizar/.local/lib'
 export SVN_EDITOR=vim
 export PRJ=/home/rizar/Jacobs/Robotics/Project
 export RGBD=/home/rizar/Jacobs/Robotics/TUM/rgbd_dataset_freiburg1_360
 export OPENBLAS_NUM_THREADS=1
+export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst:
+export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib  
+
+export YA=rizar@asr-dev03h.dev.voicetech.yandex.net
 
 export DISABLE_AUTO_TITLE=true
 export DIRSTACKSIZE=8

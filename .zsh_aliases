@@ -14,6 +14,9 @@ alias matlab=~/Dist/matlab2013a/bin/matlab
 alias vims='vim -S .vim.session'
 alias gda='gdb --args'
 alias kchg='ls -t | head -1 | xargs kcachegrind'
+alias work="ssh bahdanau@elisa1.iro.umontreal.ca"
+alias vim="vim --servername vim"
+alias sync_source="rsync -rvz --exclude='*/.*' --exclude='*.pkl' --exclude='*.pyc'"
 
 alias j1='%1'
 alias j2='%2'
@@ -21,13 +24,36 @@ alias j3='%3'
 alias j4='%4'
 alias j5='%5'
 
+function theano_default {
+    export THEANO_FLAGS=""
+}
+
+function theano_cpu_profile {
+    export THEANO_FLAGS="profile=True,profile_memory=True"
+    echo "THEANO_FLAGS=$THEANO_FLAGS"
+}
+
+function theano_fast {
+    export THEANO_FLAGS="optimizer=fast_compile"
+    echo "THEANO_FLAGS=$THEANO_FLAGS"
+}
+
+function sync_with_ya {
+    sync_source ~/Dist/blocks $YA:dist
+    sync_source ~/Jacobs/Master/fully-neural-lvsr $YA:dist
+    sync_source ~/Dist/theano $YA:dist
+    sync_source ~/Dist/fuel $YA:dist
+    sync_source ~/Dist/picklable_itertools $YA:dist
+}
+
+function reload_zsh_configs {
+    source ~/.zshrc
+    source ~/.zsh_aliases
+}
+
 function rossetup {
     . /opt/ros/hydro/setup.zsh
     [ -f devel/setup.zsh ] && . devel/setup.zsh
-}
-
-function mrlc() {
-    mr_cp redwood:8013/$1 local/$2
 }
 
 function showline() {

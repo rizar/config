@@ -65,7 +65,7 @@ map <leader>vr :e ~/.vimrc<CR>
 map <leader>vc :e ./.vim.custom<CR>
 map <leader>b :make\ VERBOSE=1<CR>
 map <leader>cc :ccl<CR>
-noremap <silent> <leader>h :set hlsearch! hlsearch?<CR>
+noremap <silent> <leader>hl :set hlsearch! hlsearch?<CR>
 noremap <silent> <leader>i :set incsearch! incsearch?<CR>
 
 " Whitespaces
@@ -83,42 +83,6 @@ map <leader>x :!chmod +x %<CR>
 " MRU
 map <leader>re :MRU<CR>
 
-" clang_complete + super_tab (complicated)
-let location = '/usr/lib/'
-let clang_available = system('test ! -f ' . location . 'libclang.so; echo $?')
-if clang_available == 0
-    let g:dont_load_clang_complete = 1
-    let g:SuperTabDefaultCompletionType = "<c-x><c-n>"
-else
-    let g:dont_load_clang_complete = 0
-
-    let g:SuperTabDefaultCompletionType = 'context'
-    let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
-
-    let g:clang_complete_enabled = 1
-    " Use libclang.so instead of clang executable
-    " let g:clang_exec='/home/rizar/.local/bin/clang++'
-    let g:clang_use_library = 1
-    let g:clang_library_path = location
-    " Periodically update the quickfix window
-    " let g:clang_periodic_quickfix = 1
-    " Disable auto popup, use <Tab> to autocomplete
-    let g:clang_complete_auto = 0
-    " Show clang errors in the quickfix window
-    let g:clang_complete_copen = 1
-    " Auto select the first entry and insert it
-    let g:clang_auto_select = 2
-    " Complete preprocessor macros and constants
-    let g:clang_complete_macros = 1
-    " Complete code patterns. e.g. loops
-    let g:clang_complete_patterns = 1
-
-    let g:clang_snippets = 1
-    let g:clang_snippets_engine = 'clang_complete'
-
-    nnoremap <silent> <leader>f :call g:ClangUpdateQuickFix()<CR>
-endif
-
 " Jedi configuration
 let g:jedi#popup_on_dot=0
 let g:jedi#popup_select_first=0
@@ -126,6 +90,10 @@ let g:jedi#show_call_signatures=0
 
 " Completion settings
 set completeopt=longest,menuone
+
+" Docs
+map tw :set tw=75<CR>
+map tq :set tw=79<CR>
 
 set laststatus=2 " Always display status line
 
@@ -143,6 +111,11 @@ nmap ; :
 " MBE
 let g:miniBufExplVSplit=25
 set hidden
+
+" ATP (Latex Plugin)
+let atp_DefaultDebugMode="Debug"
+map <Leader>mk :Latexmk<CR>
+map <Leader>b :MakeLatex<CR>
 
 " c++ indentation
 set cino=g0
@@ -163,6 +136,7 @@ if !exists("auto_cmds_loaded")
     autocmd BufWritePost .vim.custom :source .vim.custom
     autocmd FileType c,cpp,python,ruby,java autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd VimLeave * call SaveSession()
+    autocmd BufNewFile,BufRead *.ipy set filetype=python
 endif
 
 set ignorecase
@@ -194,6 +168,5 @@ function! CheckForCustomConfiguration()
 endfunction
 call CheckForCustomConfiguration()
 
-let g:pathogen_disabled = []
 call pathogen#infect()
 call pathogen#helptags()
