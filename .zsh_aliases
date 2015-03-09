@@ -15,7 +15,7 @@ alias vims='vim -S .vim.session'
 alias gda='gdb --args'
 alias kchg='ls -t | head -1 | xargs kcachegrind'
 alias work="ssh bahdanau@elisa1.iro.umontreal.ca"
-alias vim="vim --servername vim"
+#alias vim="vim --servername vim"
 alias sync_source="rsync -rvz --exclude='*/.*' --exclude='*.pkl' --exclude='*.pyc'"
 
 alias j1='%1'
@@ -23,6 +23,14 @@ alias j2='%2'
 alias j3='%3'
 alias j4='%4'
 alias j5='%5'
+
+function theano_flags_and_rc {
+    echo "THEANO_FLAGS=$THEANO_FLAGS"
+    echo
+    echo ".theanorc:"
+    echo
+    cat ~/.theanorc
+}
 
 function theano_default {
     export THEANO_FLAGS=""
@@ -35,6 +43,13 @@ function theano_cpu_profile {
 
 function theano_fast {
     export THEANO_FLAGS="optimizer=fast_compile"
+    echo "THEANO_FLAGS=$THEANO_FLAGS"
+}
+
+function theano_gpu_fast {
+    export CUDA_LAUNCH_BLOCKING=0
+    export THEANO_FLAGS="optimizer=fast_run,device=gpu,floatX=float32"
+    echo "CUDA_LAUNCH_BLOCKING=$CUDA_LAUNCH_BLOCKING"
     echo "THEANO_FLAGS=$THEANO_FLAGS"
 }
 
