@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
+# Optionally,f you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
@@ -45,7 +45,8 @@ export PATH='/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
 '/home/rizar/bin:'\
 $PATH
-export LD_LIBRARY_PATH='/home/rizar/.local/lib'
+export CUDA_ROOT='/usr/local/cuda'
+export LD_LIBRARY_PATH="/home/rizar/.local/lib:$CUDA_ROOT/lib64"
 export SVN_EDITOR=vim
 export PRJ=/home/rizar/Jacobs/Robotics/Project
 export RGBD=/home/rizar/Jacobs/Robotics/TUM/rgbd_dataset_freiburg1_360
