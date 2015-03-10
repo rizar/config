@@ -40,12 +40,12 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # Environment
+export CUDA_ROOT='/usr/local/cuda'
 export BASH_ENV='~/.bashrc'
 export PATH='/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
 '/home/rizar/bin:'\
-$PATH
-export CUDA_ROOT='/usr/local/cuda'
+$CUDA_ROOT:$PATH
 export LD_LIBRARY_PATH="/home/rizar/.local/lib:$CUDA_ROOT/lib64"
 export SVN_EDITOR=vim
 export PRJ=/home/rizar/Jacobs/Robotics/Project
