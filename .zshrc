@@ -54,6 +54,7 @@ export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst:
 export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib  
 
 export YA=rizar@asr-dev03h.dev.voicetech.yandex.net
+export YA2=rizar@cuda-sge09h.dev.voicetech.yandex.net
 
 export DISABLE_AUTO_TITLE=true
 export DIRSTACKSIZE=8
