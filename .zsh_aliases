@@ -42,7 +42,7 @@ function theano_cpu_profile {
 }
 
 function theano_fast {
-    export THEANO_FLAGS="optimizer=fast_compile"
+    export THEANO_FLAGS="optimizer=fast_run"
     echo "THEANO_FLAGS=$THEANO_FLAGS"
 }
 
@@ -59,6 +59,13 @@ function sync_with_ya {
     sync_source ~/Dist/theano $YA:dist
     sync_source ~/Dist/fuel $YA:dist
     sync_source ~/Dist/picklable_itertools $YA:dist
+}
+
+function make_tunnels {
+    ssh -N -L 1280:127.0.0.1:5006 $YA2 &
+    ssh -N -L 1281:127.0.0.1:8888 $YA2 &
+    ssh -N -L 2280:127.0.0.1:5006 $YA & 
+    ssh -N -L 2281:127.0.0.1:8888 $YA &
 }
 
 function reload_zsh_configs {

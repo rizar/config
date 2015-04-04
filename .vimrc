@@ -152,7 +152,7 @@ vnoremap > >gv
 set foldmethod=indent
 set nofoldenable
 
-colorscheme wombat256mod
+colorscheme calmar256-light
 
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
