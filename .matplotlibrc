@@ -1,0 +1,1 @@
+matplotlib.rcParams['axes.color_cycle'] = ['b', 'g', 'c', 'y', 'k']
