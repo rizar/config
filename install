@@ -9,6 +9,7 @@ cmd="-s"
 ln $cmd $common/.vim ~
 ln $cmd $common/.vimrc ~
 ln $cmd $common/.zshrc ~
+ln $cmd $common/.bashrc ~
 ln $cmd $common/.zsh_aliases ~
 ln $cmd $common/.screenrc ~
 ln $cmd $common/.gitconfig ~
