@@ -4,6 +4,8 @@ echo "Loading Dima's BASH settings..."
 umask 027
 if [ `hostname -d` = iro.umontreal.ca ];
 then    
+    export RIZAR_CONF_VERSION=mila
+
     if [ -e "/opt/lisa/os_v5/.local.bashrc" ];
     then 
         source /opt/lisa/os_v5/.local.bashrc; 
@@ -14,6 +16,8 @@ then
     fi
 elif [ `hostname -d` = helios ];
 then
+    export RIZAR_CONF_VERSION=helios
+
     # Source global definitions
     if [ -f /etc/bashrc ]; then
         . /etc/bashrc
@@ -32,6 +36,8 @@ then
     if [ -f /rap/jvb-000-aa/stack/.bashrc ]; then
         . /rap/jvb-000-aa/stack/.bashrc
     fi
+else
+    export RIZAR_CONF_VERSION=default
 fi
 
 # Environment

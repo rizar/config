@@ -169,5 +169,9 @@ function! CheckForCustomConfiguration()
 endfunction
 call CheckForCustomConfiguration()
 
+let rizar_conf_version=$RIZAR_CONF_VERSION
+if rizar_conf_version == 'helios'
+    let g:pathogen_disabled = ['taglist']
+endif
 call pathogen#infect()
 call pathogen#helptags()
