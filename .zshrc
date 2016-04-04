@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh configuration.
-echo "Loading Dima's ZSH settings..."
 . ~/.bashrc
 
 ZSH=$HOME/.oh-my-zsh
@@ -51,6 +50,4 @@ bindkey '^X^X' history-beginning-search-menu
 
 # Disable correction
 setopt nocorrectall
-
-echo "Dima's ZSH settings are loaded!"
 

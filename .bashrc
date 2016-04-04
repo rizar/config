@@ -1,6 +1,4 @@
 # LISA
-echo "Loading Dima's BASH settings..."
-
 umask 027
 if [ `hostname -d` = iro.umontreal.ca ];
 then    
@@ -9,10 +7,8 @@ then
     if [ -e "/opt/lisa/os_v5/.local.bashrc" ];
     then 
         source /opt/lisa/os_v5/.local.bashrc; 
-        echo "MILA config v5 loaded"
     else 
         source /data/lisa/data/local_export/.local.bashrc; 
-        echo "Old MILA config loaded"
     fi
 elif [ `hostname -d` = helios ];
 then
@@ -41,8 +37,8 @@ else
 fi
 
 # Environment
+# TODO: do not mess with CUDA_ROOT
 export CUDA_ROOT='/usr/local/cuda'
-export BASH_ENV='~/.bashrc'
 export PATH='/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
 '/home/rizar/bin:'\
@@ -56,6 +52,7 @@ export TMP3=/data/lisatmp3/bahdanau
 export TMP4=/data/lisatmp4/bahdanau
 export SNT=$TMP3/sentence_models
 export GOLD=/data/lisatmp/vanmerb/joint_paper_hs/dev
+# TODO: should not be necessary
 export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH:$GHOG"
 export OPENBLAS_NUM_THREADS=1
 export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst:
@@ -95,5 +92,3 @@ fi
 
 # Aliases and functions
 . ~/.zsh_aliases
-
-echo "Dima's BASH settings are loaded!"
