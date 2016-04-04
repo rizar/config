@@ -102,3 +102,25 @@ function middle() {
 function yank() {
     xclip -selection clipboard
 }
+
+function howmuch() {
+    NUM=$((2 * $1 + 1))
+    nvidia-smi -q -d MEMORY | grep Used | awk "NR == $NUM {print \$3}"
+}
+
+function peek_gpu_memory() {$
+    MAX=0$
+    ITER=0$
+    TIME=0.01$
+    while true;$
+    do$
+        CUR=`howmuch $1`$
+        if [ $CUR -gt $MAX ];$
+        then$
+            MAX=$CUR;$
+            echo "After $ITER tries new peek is " $MAX$
+        fi$
+        sleep $TIME$
+        ITER=$(($ITER + 1))$
+    done$
+}

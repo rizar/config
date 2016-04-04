@@ -7,6 +7,7 @@ let mapleader=','
 
 map <F2> :w<CR>
 map rr :e<CR>
+map wq :wqa<CR>
 
 map <F6> <ESC>:cprev<CR>
 map <F7> <ESC>:cc<CR>

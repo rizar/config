@@ -34,7 +34,12 @@ ZSH_THEME="bira"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+# LISA
+umask 027
+if [ -e "/opt/lisa/os_v5/.local.bashrc" ];then source /opt/lisa/os_v5/.local.bashrc; else source /data/lisa/data/local_export/.local.bashrc; fi
+
 source $ZSH/oh-my-zsh.sh
+
 
 # Customize to your needs...
 #
@@ -46,10 +51,16 @@ export PATH='/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
 '/home/rizar/bin:'\
 $CUDA_ROOT:$PATH
-export LD_LIBRARY_PATH="/home/rizar/.local/lib:$CUDA_ROOT/lib64"
+export LD_LIBRARY_PATH="/home/rizar/.local/lib:$CUDA_ROOT/lib64:$LD_LIBRARY_PATH"
 export SVN_EDITOR=vim
 export PRJ=/home/rizar/Jacobs/Robotics/Project
 export RGBD=/home/rizar/Jacobs/Robotics/TUM/rgbd_dataset_freiburg1_360
+export GHOG=$HOME/Projects/groundhog
+export TMP3=/data/lisatmp3/bahdanau
+export TMP4=/data/lisatmp4/bahdanau
+export SNT=$TMP3/sentence_models
+export GOLD=/data/lisatmp/vanmerb/joint_paper_hs/dev
+export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH:$GHOG"
 export OPENBLAS_NUM_THREADS=1
 export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst:
 export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib  
