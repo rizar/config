@@ -12,6 +12,26 @@ then
         source /data/lisa/data/local_export/.local.bashrc; 
         echo "Old MILA config loaded"
     fi
+elif [ `hostname -d` = helios ];
+then
+    # Source global definitions
+    if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+    fi
+
+    # CLUMEQ
+    for i in /clumeq/etc/profile.d/*.sh ; 
+    do
+        if [ -r "$i" ]; 
+        then
+            . $i
+        fi
+    done
+
+    # MILA definitions
+    if [ -f /rap/jvb-000-aa/stack/.bashrc ]; then
+        . /rap/jvb-000-aa/stack/.bashrc
+    fi
 fi
 
 # Environment
