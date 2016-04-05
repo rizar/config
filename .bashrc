@@ -1,7 +1,7 @@
 # LISA
-umask 027
 if [ `hostname -d` = iro.umontreal.ca ];
 then    
+    umask 027
     export RIZAR_CONF_VERSION=mila
 
     if [ -e "/opt/lisa/os_v5/.local.bashrc" ];
