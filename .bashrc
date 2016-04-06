@@ -34,30 +34,20 @@ then
     fi
 else
     export RIZAR_CONF_VERSION=default
+    export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst
+    export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib
 fi
 
 # Environment
-# TODO: do not mess with CUDA_ROOT
-export CUDA_ROOT='/usr/local/cuda'
 export PATH='/home/rizar/scripts:'\
 '/home/rizar/.local/bin:'\
 '/home/rizar/bin:'\
-$CUDA_ROOT:$PATH
-export LD_LIBRARY_PATH="/home/rizar/.local/lib:$CUDA_ROOT/lib64:$LD_LIBRARY_PATH"
+$PATH
+export LD_LIBRARY_PATH="/home/rizar/.local/lib:$LD_LIBRARY_PATH"
 export SVN_EDITOR=vim
-export PRJ=/home/rizar/Jacobs/Robotics/Project
-export RGBD=/home/rizar/Jacobs/Robotics/TUM/rgbd_dataset_freiburg1_360
-export GHOG=$HOME/Projects/groundhog
 export TMP3=/data/lisatmp3/bahdanau
 export TMP4=/data/lisatmp4/bahdanau
-export SNT=$TMP3/sentence_models
-export GOLD=/data/lisatmp/vanmerb/joint_paper_hs/dev
-# TODO: should not be necessary
-export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH:$GHOG"
-export OPENBLAS_NUM_THREADS=1
-export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst:
-export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib  
-
+export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH"
 export YA=rizar@asr-dev03h.dev.voicetech.yandex.net
 export YA2=rizar@cuda-sge09h.dev.voicetech.yandex.net
 
