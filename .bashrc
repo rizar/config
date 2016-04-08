@@ -39,11 +39,11 @@ else
 fi
 
 # Environment
-export PATH='/home/rizar/scripts:'\
-'/home/rizar/.local/bin:'\
-'/home/rizar/bin:'\
+export PATH="$HOME/scripts:"\
+"$HOME/.local/bin:"\
+"$HOME/bin:"\
 $PATH
-export LD_LIBRARY_PATH="/home/rizar/.local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export SVN_EDITOR=vim
 export TMP3=/data/lisatmp3/bahdanau
 export TMP4=/data/lisatmp4/bahdanau
