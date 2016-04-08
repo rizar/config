@@ -134,7 +134,7 @@ if !exists("auto_cmds_loaded")
     let auto_cmds_loaded=1
     autocmd BufWritePost .vimrc :source /home/rizar/.vimrc
     autocmd BufWritePost .vim.custom :source .vim.custom
-    autocmd FileType c,cpp,python,ruby,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType c,cpp,python,ruby,java,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd VimLeave * call SaveSession()
     autocmd BufNewFile,BufRead *.ipy set filetype=python
 endif
