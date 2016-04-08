@@ -17,6 +17,7 @@ alias kchg='ls -t | head -1 | xargs kcachegrind'
 alias work="ssh bahdanau@elisa1.iro.umontreal.ca"
 #alias vim="vim --servername vim"
 alias sync_source="rsync -rvz --exclude='*/.*' --exclude='*.pkl' --exclude='*.pyc'"
+alias iro='sshpass -p 1e9_is-not_INF'
 
 alias j1='%1'
 alias j2='%2'
