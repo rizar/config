@@ -4,11 +4,10 @@ then
     umask 027
     export RIZAR_CONF_VERSION=mila
 
-    if [ -e "/opt/lisa/os_v5/.local.bashrc" ];
-    then 
-        source /opt/lisa/os_v5/.local.bashrc; 
-    else 
-        source /data/lisa/data/local_export/.local.bashrc; 
+    if [ -e "/opt/lisa/os_v5/.local.bashrc" ]; 
+        then source /opt/lisa/os_v5/.local.bashrc;
+    elif [ -e "/opt/lisa/os_v4/.local.bashrc" ];
+        then source /opt/lisa/os_v4/.local.bashrc;
     fi
 elif [ `hostname -d` = helios ];
 then
@@ -40,13 +39,16 @@ fi
 
 # Environment
 export PATH="$HOME/scripts:"\
-"$HOME/.local/bin:"\
 "$HOME/bin:"\
+"$HOME/.local/bin:"\
 $PATH
+export CPATH="$HOME/.local/include:$CPATH"
+export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export SVN_EDITOR=vim
 export TMP3=/data/lisatmp3/bahdanau
 export TMP4=/data/lisatmp4/bahdanau
+unset FUEL_DATA_PATH
 export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH"
 export YA=rizar@asr-dev03h.dev.voicetech.yandex.net
 export YA2=rizar@cuda-sge09h.dev.voicetech.yandex.net
