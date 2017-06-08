@@ -15,4 +15,4 @@ ln $cmd $common/.screenrc ~
 ln $cmd $common/.gitconfig ~
 ln $cmd $common/.gitignore ~
 ln $cmd $common/.matplotlibrc ~
-ln $cmd $common/.00.py ~/.ipython/profile_default/startup/00.py
+# ln $cmd $common/.00.py ~/.ipython/profile_default/startup/00.py
