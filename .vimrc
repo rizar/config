@@ -47,6 +47,10 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+" speed up!
+set nobackup
+set noswapfile
+
 " Enable backspace
 set bs=2
 
@@ -153,7 +157,7 @@ vnoremap > >gv
 set foldmethod=indent
 set nofoldenable
 
-colorscheme calmar256-light
+"colorscheme calmar256-light
 
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
