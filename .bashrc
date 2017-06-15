@@ -47,8 +47,8 @@ export PATH="$HOME/scripts:"\
 "$HOME/.local/bin:"\
 $PATH
 export CPATH="$HOME/.local/include:$CPATH"
-export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH:$HOME/usr/local/lib"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH:$HOME/usr/local/lib"
 export SVN_EDITOR=vim
 export TMP3=/data/lisatmp3/bahdanau
 export TMP4=/data/lisatmp4/bahdanau
