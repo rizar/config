@@ -38,7 +38,7 @@ else
     export RIZAR_CONF_VERSION=default
     export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst
     export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib
-    [ -z $ZSH_VERSION ] && . ~/.bashrc_ubuntu
+    [ -z $ZSH_VERSION ] && [ -e ~/.bashrc_ubuntu ] && . ~/.bashrc_ubuntu
 fi
 
 # Environment
@@ -47,8 +47,8 @@ export PATH="$HOME/scripts:"\
 "$HOME/.local/bin:"\
 $PATH
 export CPATH="$HOME/.local/include:$CPATH"
-export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH:/usr/local/lib"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH:/usr/local/lib"
 export SVN_EDITOR=vim
 export TMP3=/data/lisatmp3/bahdanau
 export TMP4=/data/lisatmp4/bahdanau
