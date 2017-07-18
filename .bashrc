@@ -1,8 +1,8 @@
 # LISA
-HOSTNAME=`hostname -d`
-[ -z $HOSTNAME ] && HOSTNAME=unknown
+RIZAR_HOSTNAME=`hostname -d`
+[ -z $RIZAR_HOSTNAME ] && RIZAR_HOSTNAME=unknown
 
-if [ $HOSTNAME = iro.umontreal.ca ];
+if [ $RIZAR_HOSTNAME = iro.umontreal.ca ];
 then    
     umask 027
     export RIZAR_CONF_VERSION=mila
@@ -12,7 +12,7 @@ then
     elif [ -e "/opt/lisa/os_v4/.local.bashrc" ];
         then source /opt/lisa/os_v4/.local.bashrc;
     fi
-elif [ $HOSTNAME = helios ];
+elif [ $RIZAR_HOSTNAME = helios ];
 then
     export RIZAR_CONF_VERSION=helios
 
