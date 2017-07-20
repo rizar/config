@@ -36,8 +36,6 @@ then
     fi
 else
     export RIZAR_CONF_VERSION=default
-    export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst
-    export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib
     [ -z $ZSH_VERSION ] && [ -e ~/.bashrc_ubuntu ] && . ~/.bashrc_ubuntu
 fi
 
