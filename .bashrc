@@ -6,6 +6,7 @@ if [ $RIZAR_HOSTNAME = iro.umontreal.ca ];
 then    
     umask 027
     export RIZAR_CONF_VERSION=mila
+    # export CUDNN=5.1
 
     if [ -e "/opt/lisa/os_v5/.local.bashrc" ]; 
         then source /opt/lisa/os_v5/.local.bashrc;
@@ -50,12 +51,7 @@ export CPATH="$HOME/.local/include:$CPATH"
 export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH:/usr/local/lib"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH:/usr/local/lib"
 export SVN_EDITOR=vim
-export TMP3=/data/lisatmp3/bahdanau
-export TMP4=/data/lisatmp4/bahdanau
 unset FUEL_DATA_PATH
-export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH"
-export YA=rizar@asr-dev03h.dev.voicetech.yandex.net
-export YA2=rizar@cuda-sge09h.dev.voicetech.yandex.net
 
 # Aliases and functions
 . ~/.zsh_aliases
