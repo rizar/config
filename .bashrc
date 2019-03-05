@@ -36,8 +36,8 @@ then
     fi
 else
     export RIZAR_CONF_VERSION=default
-    export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst
-    export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib
+    #export BSTINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bst
+    #export BIBINPUTS=.:$HOME/LISA/svn_repos/trunk/articles/bib
     [ -z $ZSH_VERSION ] && [ -e ~/.bashrc_ubuntu ] && . ~/.bashrc_ubuntu
 fi
 
@@ -50,10 +50,8 @@ export CPATH="$HOME/.local/include:$CPATH"
 export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH:/usr/local/lib"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH:/usr/local/lib"
 export SVN_EDITOR=vim
-export TMP3=/data/lisatmp3/bahdanau
-export TMP4=/data/lisatmp4/bahdanau
+export TMP=/data/milatmp1/bahdanau
 unset FUEL_DATA_PATH
-export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH"
 export YA=rizar@asr-dev03h.dev.voicetech.yandex.net
 export YA2=rizar@cuda-sge09h.dev.voicetech.yandex.net
 
