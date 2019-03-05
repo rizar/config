@@ -137,7 +137,7 @@ endfunction
 " auto load of .vimrc and removal of trailing spaces
 if !exists("auto_cmds_loaded")
     let auto_cmds_loaded=1
-    autocmd BufWritePost .vimrc :source /home/rizar/.vimrc
+    autocmd BufWritePost .vimrc :source $HOME/.vimrc
     autocmd BufWritePost .vim.custom :source .vim.custom
     autocmd FileType c,cpp,python,ruby,java,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
     autocmd VimLeave * call SaveSession()
@@ -158,6 +158,9 @@ set foldmethod=indent
 set nofoldenable
 
 "colorscheme calmar256-light
+
+"temporarily disable gitgutter
+set runtimepath-=~/.vim/bundle/gitgutter
 
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
