@@ -57,3 +57,6 @@ export YA2=rizar@cuda-sge09h.dev.voicetech.yandex.net
 
 # Aliases and functions
 . ~/.zsh_aliases
+
+# added by Miniconda3 installer
+export PATH="/home/dzmitry/miniconda3/bin:$PATH"
